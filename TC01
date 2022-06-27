@@ -1,7 +1,12 @@
 require 'rubygems'
 require 'selenium-webdriver'
 
-#what the
+driver = Selenium::WebDriver.for:chrome
+driver.manage.timeouts.implicit_wait = 30
 
-driver = Selenium::WebDriver.for :chrome
-driver.get("https:\\www.google.com")
+
+driver.get("https://www.google.com")
+driver.find_element(:css, '#L2AGLb > div').click
+search_box = driver.find_element(:name, 'q')
+search_box.send_keys("MyHeritage")
+search_box.submit
