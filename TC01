@@ -10,3 +10,13 @@ driver.find_element(:css, '#L2AGLb > div').click
 search_box = driver.find_element(:name, 'q')
 search_box.send_keys("MyHeritage")
 search_box.submit
+
+#temporary cheat
+driver.get("https://www.myheritage.es/")
+
+learn_more=driver.find_element(:xpath, "//div[@data-automations='get_dna_test_button']")
+learn_more.click
+
+#offer=driver.find_element(:css, 'div[class="offer_price"]')
+
+driver.quit
