@@ -19,6 +19,17 @@ learn_more.click
 
 offer=driver.find_element(:css, 'div[class="offer_price"]')
 offer_text=offer.text
-puts offer_text
+#puts offer_text
+
+price=/\d+/.match(offer_text)
+price=price.to_s
+puts price
+
+pretext="Price=€"
+exit_price = pretext + price
+puts exit_price
+
+price_file = File.new "price.txt","w+"
+price_file.write(exit_price)
 
 driver.quit
