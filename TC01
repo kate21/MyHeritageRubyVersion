@@ -23,11 +23,11 @@ offer_text=offer.text
 
 price=/\d+/.match(offer_text)
 price=price.to_s
-puts price
+#puts price
 
 pretext="Price=€"
 exit_price = pretext + price
-puts exit_price
+#puts exit_price
 
 price_file = File.new "price.txt","w+"
 price_file.write(exit_price)
