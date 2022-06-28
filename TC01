@@ -17,6 +17,8 @@ driver.get("https://www.myheritage.es/")
 learn_more=driver.find_element(:xpath, "//div[@data-automations='get_dna_test_button']")
 learn_more.click
 
-#offer=driver.find_element(:css, 'div[class="offer_price"]')
+offer=driver.find_element(:css, 'div[class="offer_price"]')
+offer_text=offer.text
+puts offer_text
 
 driver.quit
